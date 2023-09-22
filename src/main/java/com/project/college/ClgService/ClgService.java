@@ -55,25 +55,33 @@ public class ClgService implements ClgServiceInterface
 					{
 						clgEntity2.setDept(clgEntity.getDept());
 					}
-					if(clgEntity.getCgpa()!=0)
-					{
-						clgEntity2.setCgpa(clgEntity.getCgpa());
-					}
+//					if(clgEntity.getCgpa()!=0)
+//					{
+//						clgEntity2.setCgpa(clgEntity.getCgpa());
+//					}
+					clgEntity2.setCgpa(clgEntity.getCgpa());
 					if(clgEntity.getSection()!=null)
 					{
 						clgEntity2.setSection(clgEntity.getSection());
 					}
-					if(clgEntity.getYear()!=0)
+//					if(clgEntity.getYear()!=0)
+//					{
+//						clgEntity2.setYear(clgEntity.getYear());
+//					}
+					clgEntity2.setYear(clgEntity.getYear());
+//					if(clgEntity.getBacklogs()!=0)
+//					{
+//						clgEntity2.setBacklogs(clgEntity.getBacklogs());
+//					}
+					clgEntity2.setBacklogs(clgEntity.getBacklogs());
+//					if(clgEntity.getHistoryOfArrear()!=0)
+//					{
+//						clgEntity2.setHistoryOfArrear(clgEntity.getHistoryOfArrear());
+//					}
+					clgEntity2.setHistoryOfArrear(clgEntity.getHistoryOfArrear());
+					if (clgEntity.getPlace()!=null)
 					{
-						clgEntity2.setYear(clgEntity.getYear());
-					}
-					if(clgEntity.getBacklogs()!=0)
-					{
-						clgEntity2.setBacklogs(clgEntity.getBacklogs());
-					}
-					if(clgEntity.getHistoryOfArrear()!=0)
-					{
-						clgEntity2.setHistoryOfArrear(clgEntity.getHistoryOfArrear());
+						clgEntity2.setPlace(clgEntity.getPlace());
 					}
 					
 					clgRepoInterface.save(clgEntity2);
@@ -109,5 +117,28 @@ public class ClgService implements ClgServiceInterface
 		}
 		
 		return clgEntity;
+	}
+	
+	@Override
+	public List<ClgEntity> getByDept(String dept)
+	{
+		List<ClgEntity> list1=new ArrayList<ClgEntity>();
+		try {
+			list1=clgRepoInterface.getByDept(dept);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list1;
+	}
+
+	public List<ClgEntity> getPlacementInterested(String placementInterested)
+	{
+		List<ClgEntity> list1=new ArrayList<ClgEntity>();
+		try {
+			list1=clgRepoInterface.getPlacementInterested(placementInterested);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list1;
 	}
 }

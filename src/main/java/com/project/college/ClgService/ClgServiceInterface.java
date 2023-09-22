@@ -16,4 +16,6 @@ public interface ClgServiceInterface
 
 	public ClgEntity searchById(Long id);
 
+	public List<ClgEntity> getByDept(String dept);
+
 }

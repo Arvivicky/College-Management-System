@@ -1,5 +1,6 @@
 package com.project.college.ClgEntity;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,15 +16,17 @@ public class ClgEntity
 {
 	@Id
 	@GeneratedValue
-	private Long Rollno;
-	private String Name;
-	private String Dept;
-	private String Section;
-	private int Year;
-	private float Cgpa;
+	private Long rollno;
+	private String name;
+	private String dept;
+	private String section;
+	private int year;
+	private float cgpa;
 	@Value("0")
-	private int Backlogs;
+	private int backlogs;
 	@Value("0")
-	private int HistoryOfArrear;
+	private int historyOfArrear;
+	private String place;
+	private String placementInterested;
 
 }

@@ -45,6 +45,24 @@ public class ClgController
 		return clgEntity;
 	}
 	
+	@GetMapping(value = "/getByDept/{dept}")
+	public List<ClgEntity> getByDept(@PathVariable String dept)
+	{
+		List<ClgEntity> list1=new ArrayList<ClgEntity>();
+		list1=clgService.getByDept(dept);
+		return list1;
+		
+	}
+	
+	@GetMapping(value = "/getPlacementInterested/{placementInterested}")
+	public List<ClgEntity> getPlacementInterested(@PathVariable String placementInterested)
+	{
+		List<ClgEntity> list1=new ArrayList<ClgEntity>();
+		list1=clgService.getPlacementInterested(placementInterested);
+		return list1;
+		
+	}
+	
 	@PostMapping(value = "/insert")
 	public ClgEntity insert(@RequestBody ClgEntity clgEntity)
 	{
