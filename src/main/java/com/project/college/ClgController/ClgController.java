@@ -37,7 +37,7 @@ public class ClgController
 		return clglist;
 	}
 	
-	@GetMapping(value = "/searchById/{ID}")
+	@GetMapping(value = "/searchById/{id}")
 	public ClgEntity searchById(@PathVariable Long id)
 	{
 		ClgEntity clgEntity=new ClgEntity();

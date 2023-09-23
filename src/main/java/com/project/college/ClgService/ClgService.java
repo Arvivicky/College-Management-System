@@ -2,6 +2,7 @@ package com.project.college.ClgService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,10 +56,10 @@ public class ClgService implements ClgServiceInterface
 					{
 						clgEntity2.setDept(clgEntity.getDept());
 					}
-//					if(clgEntity.getCgpa()!=0)
-//					{
-//						clgEntity2.setCgpa(clgEntity.getCgpa());
-//					}
+					if(clgEntity.getCgpa()!=0)
+					{
+						clgEntity2.setCgpa(clgEntity.getCgpa());
+					}
 					clgEntity2.setCgpa(clgEntity.getCgpa());
 					if(clgEntity.getSection()!=null)
 					{
@@ -69,11 +70,13 @@ public class ClgService implements ClgServiceInterface
 //						clgEntity2.setYear(clgEntity.getYear());
 //					}
 					clgEntity2.setYear(clgEntity.getYear());
-//					if(clgEntity.getBacklogs()!=0)
-//					{
-//						clgEntity2.setBacklogs(clgEntity.getBacklogs());
-//					}
-					clgEntity2.setBacklogs(clgEntity.getBacklogs());
+					Optional<Integer> checkOptional = Optional.ofNullable(clgEntity.getBacklogs());
+				    if(checkOptional.isPresent() && clgEntity.getBacklogs() > 0) {
+				    	clgEntity.setBacklogs(checkOptional.get());
+				    	clgEntity2.setBacklogs(clgEntity.getBacklogs());
+				    }else {
+				    	clgEntity2.setBacklogs(clgEntity.getBacklogs());
+				    }
 //					if(clgEntity.getHistoryOfArrear()!=0)
 //					{
 //						clgEntity2.setHistoryOfArrear(clgEntity.getHistoryOfArrear());
