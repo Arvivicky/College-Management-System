@@ -25,7 +25,7 @@ public class ClgEntity
 	@Value("0")
 	private int backlogs;
 	@Value("0")
-	private int historyOfArrear;
+	private String historyOfArrear;
 	private String place;
 	private String placementInterested;
 

@@ -65,10 +65,10 @@ public class ClgService implements ClgServiceInterface
 					{
 						clgEntity2.setSection(clgEntity.getSection());
 					}
-//					if(clgEntity.getYear()!=0)
-//					{
-//						clgEntity2.setYear(clgEntity.getYear());
-//					}
+					if(clgEntity.getYear()!=0)
+					{
+						clgEntity2.setYear(clgEntity.getYear());
+					}
 					clgEntity2.setYear(clgEntity.getYear());
 					Optional<Integer> checkOptional = Optional.ofNullable(clgEntity.getBacklogs());
 				    if(checkOptional.isPresent() && clgEntity.getBacklogs() > 0) {
@@ -77,11 +77,10 @@ public class ClgService implements ClgServiceInterface
 				    }else {
 				    	clgEntity2.setBacklogs(clgEntity.getBacklogs());
 				    }
-//					if(clgEntity.getHistoryOfArrear()!=0)
-//					{
-//						clgEntity2.setHistoryOfArrear(clgEntity.getHistoryOfArrear());
-//					}
-					clgEntity2.setHistoryOfArrear(clgEntity.getHistoryOfArrear());
+					if(clgEntity.getHistoryOfArrear()!=null)
+					{
+						clgEntity2.setHistoryOfArrear(clgEntity.getHistoryOfArrear());
+					}
 					if (clgEntity.getPlace()!=null)
 					{
 						clgEntity2.setPlace(clgEntity.getPlace());
